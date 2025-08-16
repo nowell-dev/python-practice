@@ -6,10 +6,10 @@ Loan Calculator
 Created by: Nowell Angelo S. Tiongco
 
 History (latest on top):
-2025-08-09  TODO:   change  loan_amount datatype to float
-                    change  loan_term to number of months instead of years
-                    change  interest_rate datatype to float
-                    Added error handling in input
+2025-08-09  TODO:   Add error handling in input
+2025-08-09          Changed loan_amount datatype to float
+                    Changed loan_term to number of months instead of years
+                    Changed interest_rate datatype to float
 2025-08-06  Initial Creation
 """
 ##################################
@@ -28,10 +28,9 @@ print()
 print("-------------------------------------------------------")
 print()
 
-loan_amount = int(input("Loan Amount: "))
-loan_term = int(input("Loan Term (years): "))
-# loan_term = float(input("Loan Term (years): "))
-interest_rate = int(input("Interest Rate (percentage): "))
+loan_amount = float(input("Loan Amount: "))
+loan_term = int(input("Loan Term (months): "))
+interest_rate = float(input("Interest Rate (percentage): "))
 print()
 
 class LoanCalculator:
@@ -41,12 +40,13 @@ class LoanCalculator:
         self.interest_rate = interest_rate
     def define(self):
         print("Loan Amount: ", self.loan_amount)
-        print("Loan Term (years): ", self.loan_term)
+        print("Loan Term (months): ", self.loan_term)
         print("Interest Rate (percentage)): ", self.interest_rate)
     def monthly_amortization(self):
         P = self.loan_amount
         r = self.interest_rate / 100
-        n = self.loan_term * 12
+        #n = self.loan_term * 12
+        n = self.loan_term
         i = r / 12
         A = P * (i / (1 - math.pow(1 + i, -n)))
         return A
@@ -55,7 +55,8 @@ class LoanCalculator:
         monthly_payment = self.monthly_amortization()
         r = self.interest_rate / 100
         i = r / 12
-        n = self.loan_term * 12
+        #n = self.loan_term * 12
+        n = self.loan_term
         total_payment = 0
         total_interest = 0
         total_principal = 0
