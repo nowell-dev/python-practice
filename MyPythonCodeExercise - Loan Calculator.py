@@ -6,7 +6,7 @@ Loan Calculator
 Created by: Nowell Angelo S. Tiongco
 
 History (latest on top):
-2025-08-09  TODO:   Add error handling in input
+2025-08-17  TODO:   Add error handling in input
 2025-08-09          Changed loan_amount datatype to float
                     Changed loan_term to number of months instead of years
                     Changed interest_rate datatype to float
