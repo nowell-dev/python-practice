@@ -6,7 +6,7 @@ Loan Calculator
 Created by: Nowell Angelo S. Tiongco
 
 History (latest on top):
-2025-08-17  TODO:   Add error handling in input
+2025-08-17  TODO:   Add error handling in input - DONE
 2025-08-09          Changed loan_amount datatype to float
                     Changed loan_term to number of months instead of years
                     Changed interest_rate datatype to float
@@ -28,9 +28,27 @@ print()
 print("-------------------------------------------------------")
 print()
 
-loan_amount = float(input("Loan Amount: "))
-loan_term = int(input("Loan Term (months): "))
-interest_rate = float(input("Interest Rate (percentage): "))
+while True:
+    try:
+        loan_amount = float(input("Loan Amount: "))
+        break
+    except ValueError:
+        print("⚠️ Please enter a valid number.")
+while True:
+    try:
+        loan_term = int(input("Loan Term (months): "))
+        if loan_term < 1 or loan_term > 360:
+            print("⚠️ Please enter a value between 1 and 360.")
+            continue
+        break
+    except ValueError:
+        print("⚠️ Please enter a valid whole number (months).")
+while True:
+    try:
+        interest_rate = float(input("Interest Rate (percentage): "))
+        break
+    except ValueError:
+        print("⚠️ Please enter a valid number.")
 print()
 
 class LoanCalculator:
@@ -45,7 +63,6 @@ class LoanCalculator:
     def monthly_amortization(self):
         P = self.loan_amount
         r = self.interest_rate / 100
-        #n = self.loan_term * 12
         n = self.loan_term
         i = r / 12
         A = P * (i / (1 - math.pow(1 + i, -n)))
@@ -55,7 +72,6 @@ class LoanCalculator:
         monthly_payment = self.monthly_amortization()
         r = self.interest_rate / 100
         i = r / 12
-        #n = self.loan_term * 12
         n = self.loan_term
         total_payment = 0
         total_interest = 0
