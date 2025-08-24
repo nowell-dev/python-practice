@@ -1,0 +1,1 @@
+python "%~dp0MyPythonCodeExercise - Loan Calculator.py"
