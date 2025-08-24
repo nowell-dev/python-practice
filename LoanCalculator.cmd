@@ -1,1 +1,1 @@
-python "%~dp0MyPythonCodeExercise - Loan Calculator.py"
+python "%~dp0LoanCalculator.py"
