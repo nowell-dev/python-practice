@@ -3,7 +3,7 @@
 Practice Python Scripts
 Loan Calculator
 
-Created by: Nowell Angelo S. Tiongco
+Created by: Nowell Tiongco
 
 History (latest on top):
 2025-08-24          Export to Excel          
@@ -24,7 +24,7 @@ print("-------------------------------------------------------")
 print()
 print("Loan Calculator")
 print()
-print("Created by: Nowell Angelo S. Tiongco")
+print("Created by: github.com/nowell-dev")
 print()
 print("-------------------------------------------------------")
 print()
@@ -100,10 +100,8 @@ class LoanCalculator:
         print(f"{'':6}{'Total Payment':>18}{'Total Principal':>18}{'Total Interest':>20}")
         print(f"{'':6}{total_payment:>18,.2f}{total_principal:>18,.2f}{total_interest:>20,.2f}")
         # Add label row for totals
-        # schedule.append({"Payment": str("Total Payment"),"Principal": str("Total Principal"),"Interest": str("Total Interest")})
         schedule.append({"Month": "","Payment": "Total Payment","Principal": "Total Principal","Interest": "Total Interest","Balance": ""})
         # Add actual totals row
-        # schedule.append({"Payment": round(total_payment, 2),"Principal": round(total_principal, 2),"Interest": round(total_interest, 2)})
         schedule.append({"Month": "","Payment": round(total_payment, 2),"Principal": round(total_principal, 2),"Interest": round(total_interest, 2),"Balance": ""})
 
         return schedule
